@@ -39,7 +39,7 @@ export default function MainHero() {
         <div className="-mt-5 -ms-5 lg:block max-w-full lg:w-[500px] lg:h-[370px]">
           <img src="/images/img-hero.png" alt="Gambar Utama" className="rounded-tl-[100px] rounded-2xl" />
         </div>
-        <div className="hidden lg:block absolute w-[480px] h-[410px] border border-gray-400 top-0 right-0 -z-10 mt-5 me-6 rounded-tl-[100px] rounded-2xl"></div>
+        <div className="hidden lg:hidden xl:block absolute w-[480px] h-[410px] border border-gray-400 top-0 right-0 -z-10 mt-5 me-6 rounded-tl-[100px] rounded-2xl"></div>
       </div>
     </section>
   );

@@ -11,16 +11,9 @@ const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
   const isPopularClass = detail.isPopular ? 'flex flex-col' : 'hidden';
 
   return (
-    <div className="basis-3/12">
+    <div className="col-span-8 md:col-span-4 lg:col-span-2">
       <div className="relative bg-center bg-cover rounded-2xl h-44 mb-4">
-        <Image
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          src={detail.imgUrl}
-          alt={detail.title}
-          className="rounded-2xl"
-        />
+        <Image fill={true} src={detail.imgUrl} alt={detail.title} className="rounded-2xl object-cover object-center" />
 
         {/* Content */}
         <div className={`absolute inset-0 ${isPopularClass} text-white rounded-2xl`}>
@@ -45,7 +38,7 @@ const ListCategory: React.FC<ListCategoryProps> = ({ title, data }) => {
   return (
     <section className="mb-18">
       <h2 className="text-xl font-bold mb-4">{title}</h2>
-      <div className="flex flex-row gap-8">
+      <div className="grid grid-cols-8 gap-8">
         {data.map(
           (detail: VacationPlace): React.ReactNode => (
             <DetailListCategory key={detail.title} detail={detail} />

@@ -20,12 +20,10 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
   return (
     <div className={`relative ${imgRowSpan} ${imgHeightClass} col-span-3 md:col-span-1 bg-center bg-cover rounded-2xl`}>
       <Image
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill={true}
         src={mostPicked.imgUrl}
         alt={mostPicked.title}
-        className="rounded-2xl"
+        className="rounded-2xl object-cover object-center"
       />
 
       {/* Overlay */}
