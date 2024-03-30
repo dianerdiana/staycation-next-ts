@@ -36,7 +36,7 @@ const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
 
 const ListCategory: React.FC<ListCategoryProps> = ({ title, data }) => {
   return (
-    <section className="mb-18">
+    <div className="mb-18">
       <h2 className="text-xl font-bold mb-4">{title}</h2>
       <div className="grid grid-cols-8 gap-8">
         {data.map(
@@ -45,7 +45,7 @@ const ListCategory: React.FC<ListCategoryProps> = ({ title, data }) => {
           )
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

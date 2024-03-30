@@ -11,10 +11,13 @@ export default function MainHero() {
         <p className="my-8 font-light text-gray-400 font-sm lg:w-96">
           We provide what you need to enjoy your holiday with family. Time to make another memorable moments.
         </p>
-        <button className="px-10 py-3 text-white delay-75 rounded-md shadow-xl bg-primary hover:bg-blue-500">
+        <a
+          href="#section-categories"
+          className="px-10 py-3 text-white delay-75 rounded-md shadow-xl bg-primary hover:bg-blue-500"
+        >
           Show Me Now
-        </button>
-        <ul className="flex justify-between lg:w-11/12 mt-20">
+        </a>
+        <ul className="flex justify-between mt-20 lg:w-11/12">
           <li>
             <Image src="/icons/ic_traveler.svg" alt="ic_traveler" width={32} height={32} />
             <p className="mt-2 font-bold">
