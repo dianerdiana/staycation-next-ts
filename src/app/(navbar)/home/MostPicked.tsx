@@ -1,11 +1,16 @@
+// ** React
 import React from 'react';
 
-import { MostPick, MostPickedList } from './home.interface';
+// ** Interface
+import { VacationPlace } from './home.interface';
+import { mostPickedList } from './fake-data';
+
+// ** Next
 import Image from 'next/image';
 
 interface DetailMostPickedProps {
   index: number;
-  mostPicked: MostPick;
+  mostPicked: VacationPlace;
 }
 
 const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }) => {
@@ -45,49 +50,11 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
 };
 
 export default function MostPicked() {
-  const mostPickedList: MostPickedList = [
-    {
-      imgUrl: '/images/most-picked/mp_1.jpg',
-      title: 'Blue Origin Fams',
-      city: 'Jakarta',
-      region: 'Indonesia',
-      price: 50
-    },
-    {
-      imgUrl: '/images/most-picked/mp_2.jpg',
-      title: 'Oceand Land',
-      city: 'Bandung',
-      region: 'Indonesia',
-      price: 22
-    },
-    {
-      imgUrl: '/images/most-picked/mp_3.jpg',
-      title: 'Stark House',
-      city: 'Malang',
-      region: 'Indonesia',
-      price: 858
-    },
-    {
-      imgUrl: '/images/most-picked/mp_4.jpg',
-      title: 'Vinnavill',
-      city: 'Malang',
-      region: 'Indonesia',
-      price: 62
-    },
-    {
-      imgUrl: '/images/most-picked/mp_5.jpg',
-      title: 'Bobox',
-      city: 'Medan',
-      region: 'Indonesia',
-      price: 72
-    }
-  ];
-
   return (
-    <section className="mb-8">
+    <section className="mb-18">
       <h2 className="text-xl font-bold mb-4">Most Picked</h2>
       <div className="grid grid-cols-3 grid-rows-2 gap-8">
-        {mostPickedList.map((mostPicked: MostPick, idx: number): React.ReactNode => {
+        {mostPickedList.map((mostPicked: VacationPlace, idx: number): React.ReactNode => {
           return <DetailMostPicked key={mostPicked.title} index={idx} mostPicked={mostPicked} />;
         })}
       </div>

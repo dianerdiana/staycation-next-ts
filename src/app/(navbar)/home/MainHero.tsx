@@ -1,16 +1,14 @@
-import React from 'react';
-
 // ** Next Import
 import Image from 'next/image';
 
 export default function MainHero() {
   return (
-    <section className="container flex flex-col-reverse py-16 lg:flex-row">
+    <section className="container flex flex-col-reverse pt-16 lg:flex-row mb-18">
       <div className="basis-full lg:basis-6/12">
         <h1 className="text-[2.50rem] leading-tight font-bold">
           Forget Busy Work, <br className="hidden lg:inline-block" /> Start Next Vacation
         </h1>
-        <p className="my-8 font-thin text-gray-400 font-sm lg:w-96">
+        <p className="my-8 font-light text-gray-400 font-sm lg:w-96">
           We provide what you need to enjoy your holiday with family. Time to make another memorable moments.
         </p>
         <button className="px-10 py-3 text-white delay-75 rounded-md shadow-xl bg-primary hover:bg-blue-500">

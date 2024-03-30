@@ -32,8 +32,8 @@ export default function NavbarLayout({ children }: Readonly<{ children: React.Re
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <Link href="/">
-                    <span className="text-xl font-bold text-primary">Stay</span>
-                    <span className="text-xl font-bold text-secondary">cation.</span>
+                    <span className="text-2xl font-bold text-primary">Stay</span>
+                    <span className="text-2xl font-bold text-secondary">cation.</span>
                   </Link>
                 </div>
               </div>
