@@ -7,9 +7,9 @@ import { FiAlignJustify, FiX } from 'react-icons/fi';
 import Link from 'next/link';
 
 // ** Interfaces
-import { NavbarProps } from './types';
+import { HeaderProps } from './types';
 
-const Navbar: React.FC<NavbarProps> = ({ currentPath }) => {
+const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   // ** State
   const [isOpen, setIsOpen] = useState(false);
 
@@ -84,4 +84,4 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath }) => {
   );
 };
 
-export default Navbar;
+export default Header;

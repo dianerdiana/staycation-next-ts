@@ -6,8 +6,8 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 
 // Custom components
-import Navbar from './navbar';
-import Footer from './footer';
+import Header from './Header';
+import Footer from './Footer';
 
 export default function NavbarLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   // ** Hook
@@ -15,7 +15,7 @@ export default function NavbarLayout({ children }: Readonly<{ children: React.Re
 
   return (
     <>
-      <Navbar currentPath={currentPath} />
+      <Header currentPath={currentPath} />
       {children}
       <Footer />
     </>
