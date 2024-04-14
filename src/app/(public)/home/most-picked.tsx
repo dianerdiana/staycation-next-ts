@@ -1,11 +1,10 @@
-// ** React
+// React
 import React from 'react';
 
-// ** Interface
-import { VacationPlace } from './home.interface';
-import { mostPickedList } from './fake-data';
+// Types
+import { VacationPlace } from '@/types/vacation-place';
 
-// ** Next
+// Next
 import Image from 'next/image';
 
 interface DetailMostPickedProps {
@@ -20,10 +19,11 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
   return (
     <div className={`relative ${imgRowSpan} ${imgHeightClass} col-span-3 md:col-span-1 bg-center bg-cover rounded-2xl`}>
       <Image
-        fill={true}
+        fill
         src={mostPicked.imgUrl}
         alt={mostPicked.title}
         className="rounded-2xl object-cover object-center"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
 
       {/* Overlay */}
@@ -47,7 +47,7 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
   );
 };
 
-export default function MostPicked() {
+export default function MostPicked({ mostPickedList }: { mostPickedList: VacationPlace[] }) {
   return (
     <section className="mb-18">
       <h2 className="text-xl font-bold mb-4">Most Picked</h2>

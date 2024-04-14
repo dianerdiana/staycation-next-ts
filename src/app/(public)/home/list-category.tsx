@@ -1,11 +1,21 @@
 // ** React Import
 import React from 'react';
 
-// ** Interface
-import { VacationPlace, ListCategoryProps, DetailListCategoryProps } from './home.interface';
+// Type
+import { VacationPlace } from '@/types/vacation-place';
 
-// ** Next
+// Next
 import Image from 'next/image';
+
+// Interfaces
+interface ListCategoryProps {
+  title: string;
+  data: VacationPlace[];
+}
+
+interface DetailListCategoryProps {
+  detail: VacationPlace;
+}
 
 const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
   const isPopularClass = detail.isPopular ? 'flex flex-col' : 'hidden';
@@ -13,7 +23,13 @@ const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
   return (
     <div className="col-span-8 md:col-span-4 lg:col-span-2">
       <div className="relative bg-center bg-cover rounded-2xl h-44 mb-4">
-        <Image fill={true} src={detail.imgUrl} alt={detail.title} className="rounded-2xl object-cover object-center" />
+        <Image
+          fill={true}
+          src={detail.imgUrl}
+          alt={detail.title}
+          className="rounded-2xl object-cover object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
 
         {/* Content */}
         <div className={`absolute inset-0 ${isPopularClass} text-white rounded-2xl`}>
@@ -39,11 +55,9 @@ const ListCategory: React.FC<ListCategoryProps> = ({ title, data }) => {
     <div className="mb-18">
       <h2 className="text-xl font-bold mb-4">{title}</h2>
       <div className="grid grid-cols-8 gap-8">
-        {data.map(
-          (detail: VacationPlace): React.ReactNode => (
-            <DetailListCategory key={detail.title} detail={detail} />
-          )
-        )}
+        {data.map((detail) => (
+          <DetailListCategory key={detail.id} detail={detail} />
+        ))}
       </div>
     </div>
   );

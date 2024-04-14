@@ -6,8 +6,8 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 
 // Custom components
-import Header from './Header';
-import Footer from './Footer';
+import Header from './header';
+import Footer from './footer';
 
 export default function NavbarLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   // ** Hook

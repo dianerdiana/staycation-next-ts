@@ -2,12 +2,16 @@
 
 import React, { useState } from 'react';
 
-// ** Thirdparty
+// Thirdparty
 import { FiAlignJustify, FiX } from 'react-icons/fi';
+
+// Next
 import Link from 'next/link';
 
-// ** Interfaces
-import { HeaderProps } from './types';
+// Interface
+interface HeaderProps {
+  currentPath: string | number | any;
+}
 
 const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   // ** State
