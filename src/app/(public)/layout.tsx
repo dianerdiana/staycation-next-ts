@@ -16,7 +16,7 @@ export default function NavbarLayout({ children }: Readonly<{ children: React.Re
   return (
     <>
       <Header currentPath={currentPath} />
-      {children}
+      <main className="px-2 mx-auto max-w-7xl md:px-6 lg:px-10 text-secondary">{children}</main>
       <Footer />
     </>
   );

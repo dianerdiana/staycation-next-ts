@@ -6,6 +6,7 @@ import { VacationPlace } from '@/types/vacation-place';
 
 // Next
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface DetailMostPickedProps {
   index: number;
@@ -17,7 +18,10 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
   const imgRowSpan = index === 0 ? 'row-span-2' : 'row-span-1';
 
   return (
-    <div className={`relative ${imgRowSpan} ${imgHeightClass} col-span-3 md:col-span-1 bg-center bg-cover rounded-2xl`}>
+    <Link
+      href={`/details/${mostPicked.id}`}
+      className={`relative ${imgRowSpan} ${imgHeightClass} col-span-3 md:col-span-1 bg-center bg-cover rounded-2xl`}
+    >
       <Image
         fill
         src={mostPicked.imgUrl}
@@ -43,7 +47,7 @@ const DetailMostPicked: React.FC<DetailMostPickedProps> = ({ index, mostPicked }
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -18,13 +18,9 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({ title, active, url }) =
       <div className="flex items-center">
         <span className="block mx-2 text-gray-300 md:mx-4">/</span>
         {active ? (
-          <span className="text-sm font-semibold text-secondary">{title}</span>
+          <span className="font-semibold text-secondary">{title}</span>
         ) : (
-          <Link
-            href={url || '#'}
-            className="text-sm font-semibold text-secondary hover:text-primary"
-            aria-disabled={!active}
-          >
+          <Link href={url || '#'} className="font-semibold text-secondary hover:text-primary" aria-disabled={!active}>
             {title}
           </Link>
         )}
@@ -38,12 +34,12 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
     <div className="flex py-3 rounded-lg" aria-label="Breadcrumb">
       <ol className="inline-flex items-center">
         <li>
-          <Link href="/home" className="text-sm font-medium text-gray-300 hover:text-primary">
+          <Link href="/home" className="font-medium text-gray-300 hover:text-primary">
             Home
           </Link>
         </li>
         {items.map((item, index) => (
-          <BreadcrumbItem title={item.title} active={item.active} url={item.url} />
+          <BreadcrumbItem key={index} title={item.title} active={item.active} url={item.url} />
         ))}
       </ol>
     </div>
