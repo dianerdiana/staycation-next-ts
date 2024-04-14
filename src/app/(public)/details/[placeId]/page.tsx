@@ -3,6 +3,7 @@ import Title from './title';
 import ImageGrid from './image-grid';
 import Description from './description';
 import Recommendation from './recommendation';
+import Testimony from './testimony';
 
 export default function Page({ params }: { params: { placeId: number } }) {
   const place = {
@@ -83,6 +84,7 @@ export default function Page({ params }: { params: { placeId: number } }) {
       <ImageGrid images={place.gallery} />
       <Description description={place.description} features={place.features} placeId={place.id} price={place.price} />
       <Recommendation recommendation={place.recommendation} />
+      <Testimony />
     </>
   );
 }

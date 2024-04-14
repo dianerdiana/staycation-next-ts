@@ -1,7 +1,4 @@
-'use client';
-
-import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface RatingProps {
   rating: number;
@@ -30,7 +27,7 @@ const TestimonySection = () => {
       <div className="relative flex flex-shrink-0 col-span-12 pt-5 pb-10 md:col-span-5">
         <div className="max-w-full lg:mt-10 lg:ms-10">
           <img
-            src="/images/testimony.jpg"
+            src="/images/testimony/1.jpg"
             alt="Gambar Testimony"
             className="rounded-br-[100px] rounded-2xl w-full h-auto"
           />
