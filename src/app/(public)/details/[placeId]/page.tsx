@@ -2,6 +2,7 @@
 import Title from './title';
 import ImageGrid from './image-grid';
 import Description from './description';
+import Recommendation from './recommendation';
 
 export default function Page({ params }: { params: { placeId: number } }) {
   const place = {
@@ -31,6 +32,48 @@ export default function Page({ params }: { params: { placeId: number } }) {
       { id: 6, icon: '/images/features/ic_ac.svg', name: 'unit ready', quantity: 7 },
       { id: 7, icon: '/images/features/ic_refigrator.svg', name: 'refigrator', quantity: 2 },
       { id: 8, icon: '/images/features/ic_television.svg', name: 'television', quantity: 4 }
+    ],
+    recommendation: [
+      {
+        id: 6,
+        category: 'Nature',
+        city: 'Gunung Batu',
+        imgUrl: '/images/recommendation/1.jpg',
+        isPopular: false,
+        price: 0,
+        region: 'Indonesia',
+        title: 'Green Lake'
+      },
+      {
+        id: 7,
+        category: 'Pool',
+        city: 'Bogor',
+        imgUrl: '/images/recommendation/2.jpg',
+        isPopular: false,
+        price: 0,
+        region: 'Indonesia',
+        title: 'Dog Clubs'
+      },
+      {
+        id: 8,
+        category: 'Shopping',
+        city: 'Jakarta',
+        imgUrl: '/images/recommendation/3.jpg',
+        isPopular: true,
+        price: 0,
+        region: 'Indonesia',
+        title: 'Labour and Wait'
+      },
+      {
+        id: 9,
+        category: 'Beach',
+        city: 'Wonosobo',
+        imgUrl: '/images/recommendation/4.jpg',
+        isPopular: false,
+        price: 0,
+        region: 'Indonesia',
+        title: 'Snorkeling'
+      }
     ]
   };
 
@@ -39,6 +82,7 @@ export default function Page({ params }: { params: { placeId: number } }) {
       <Title title={place.title} city={place.city} region={place.region} />
       <ImageGrid images={place.gallery} />
       <Description description={place.description} features={place.features} placeId={place.id} price={place.price} />
+      <Recommendation recommendation={place.recommendation} />
     </>
   );
 }

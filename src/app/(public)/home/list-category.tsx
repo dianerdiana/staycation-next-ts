@@ -6,6 +6,7 @@ import { VacationPlace } from '@/types/vacation-place';
 
 // Next
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Interfaces
 interface ListCategoryProps {
@@ -21,7 +22,7 @@ const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
   const isPopularClass = detail.isPopular ? 'flex flex-col' : 'hidden';
 
   return (
-    <div className="col-span-8 md:col-span-4 lg:col-span-2">
+    <Link href={`/details/${detail.id}`} className="col-span-8 md:col-span-4 lg:col-span-2">
       <div className="relative bg-center bg-cover rounded-2xl h-44 mb-4">
         <Image
           fill={true}
@@ -46,7 +47,7 @@ const DetailListCategory: React.FC<DetailListCategoryProps> = ({ detail }) => {
           {detail.city}, {detail.region}
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

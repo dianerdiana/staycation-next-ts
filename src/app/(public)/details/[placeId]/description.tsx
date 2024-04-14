@@ -17,7 +17,7 @@ interface DescriptionProps {
 
 const Description: React.FC<DescriptionProps> = ({ placeId, description, features, price }) => {
   return (
-    <div className="grid grid-cols-5 gap-3 mt-12">
+    <div className="grid grid-cols-5 gap-3 mt-12 mb-18">
       <div className="col-span-3 pe-11">
         <DescAbout description={description} />
         <DescFeatures features={features} />
