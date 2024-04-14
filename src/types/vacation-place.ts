@@ -1,4 +1,4 @@
-export interface VacationPlace {
+export type VacationPlace = {
   id: number;
   city: string;
   imgUrl: string;
@@ -6,4 +6,4 @@ export interface VacationPlace {
   price: number;
   region: string;
   title: string;
-}
+};
