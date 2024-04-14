@@ -1,5 +1,7 @@
+// Components
 import Title from './title';
 import ImageGrid from './image-grid';
+import Description from './description';
 
 export default function Page({ params }: { params: { placeId: number } }) {
   const place = {
@@ -21,6 +23,7 @@ export default function Page({ params }: { params: { placeId: number } }) {
     <>
       <Title title={place.title} city={place.city} region={place.region} />
       <ImageGrid images={place.gallery} />
+      <Description />
     </>
   );
 }

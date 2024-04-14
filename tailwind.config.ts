@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
@@ -25,6 +26,25 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/forms')({
+      strategy: 'class' // only generate classes
+    }),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.arrow-hide': {
+          '&::-webkit-inner-spin-button': {
+            '-webkit-appearance': 'none',
+            margin: '0'
+          },
+          '&::-webkit-outer-spin-button': {
+            '-webkit-appearance': 'none',
+            margin: '0'
+          },
+          '-moz-appearance': 'textfield !important'
+        }
+      });
+    })
+  ]
 };
 export default config;
