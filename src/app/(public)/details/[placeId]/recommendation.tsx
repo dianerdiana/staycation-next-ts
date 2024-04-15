@@ -22,7 +22,7 @@ const Recommendation: React.FC<RecommendationProps> = ({ recommendation }) => {
           const isPopularClass = detail.isPopular ? 'flex flex-col' : 'hidden';
 
           return (
-            <Link href={`/details/${detail.id}`} className="col-span-8 md:col-span-4 lg:col-span-2">
+            <Link key={detail.id} href={`/details/${detail.id}`} className="col-span-8 md:col-span-4 lg:col-span-2">
               <div className="relative bg-center bg-cover rounded-2xl h-44 mb-4">
                 <Image
                   fill={true}
