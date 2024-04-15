@@ -64,10 +64,10 @@ const DescBooking = ({ placeId, price }: { placeId: number; price: number }) => 
   }, [duration]);
 
   return (
-    <div className="flex items-center px-20 border border-gray-200 rounded-2xl py-14">
+    <div className="flex items-center justify-center px-8 border border-gray-200 py-7 lg:px-20 lg:py-14 rounded-2xl">
       <div>
         <h4 className="mb-4 font-semibold">Start Booking</h4>
-        <p className="mb-4 text-4xl">
+        <p className="mb-4 text-2xl md:text-3xl lg:text-3xl">
           <span className="font-semibold text-green-400">${price}</span>{' '}
           <span className="font-light text-gray-400">per night</span>
         </p>

@@ -12,17 +12,17 @@ interface DescriptionProps {
   description: string;
   features: Feature[];
   placeId: number;
-  price: string | number;
+  price: number;
 }
 
 const Description: React.FC<DescriptionProps> = ({ placeId, description, features, price }) => {
   return (
     <div className="grid grid-cols-5 gap-3 mt-12 mb-18">
-      <div className="col-span-3 pe-11">
+      <div className="col-span-5 md:col-span-3 pe-11 mb-9 md:mb-0">
         <DescAbout description={description} />
         <DescFeatures features={features} />
       </div>
-      <div className="col-span-2">
+      <div className="col-span-5 md:col-span-2">
         <DescBooking price={price} placeId={placeId} />
       </div>
     </div>
