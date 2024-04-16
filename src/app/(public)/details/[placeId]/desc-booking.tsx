@@ -7,6 +7,9 @@ import { useEffect, useRef, useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import Flatpickr from 'react-flatpickr';
 
+// Next
+import Link from 'next/link';
+
 // Style
 import 'flatpickr/dist/flatpickr.css';
 
@@ -133,9 +136,9 @@ const DescBooking = ({ placeId, price }: { placeId: number; price: number }) => 
             {duration} night{duration > 1 ? 's' : ''}
           </span>
         </p>
-        <button className="block min-w-full px-10 py-3 text-white delay-75 rounded-md shadow-xl lg:w-auto bg-primary hover:bg-blue-500">
+        <Link href={`/booking/${placeId}`} className="btn-primary min-w-full px-10 py-3 text-center">
           Continue to Book
-        </button>
+        </Link>
       </div>
     </div>
   );
