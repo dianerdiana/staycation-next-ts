@@ -1,8 +1,8 @@
 import { FiCheck } from 'react-icons/fi';
 
-const Payment = () => {
+const Payment = ({ currentTab, onTabChange }: { currentTab: number; onTabChange: any }) => {
   return (
-    <>
+    <div id="tab-2" className={currentTab === 2 ? 'block' : 'hidden'}>
       <div className="flex items-center justify-center my-14">
         <div className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full">
           <FiCheck strokeWidth={2} size={30} color="white" />
@@ -84,12 +84,14 @@ const Payment = () => {
         </div>
       </div>
       <div className="flex justify-center mb-5">
-        <button className="py-2 w-72 btn-primary">Continue to Book</button>
+        <button className="py-2 w-72 btn-primary" onClick={() => onTabChange(3)}>
+          Continue to Book
+        </button>
       </div>
       <div className="flex justify-center mb-16">
         <button className="py-2 w-72 btn-secondary">Cancel</button>
       </div>
-    </>
+    </div>
   );
 };
 

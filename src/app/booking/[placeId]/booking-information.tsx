@@ -1,8 +1,9 @@
+// Next
 import Image from 'next/image';
 
-const BookingInformation = () => {
+const BookingInformation = ({ currentTab, onTabChange }: { currentTab: number; onTabChange: any }) => {
   return (
-    <>
+    <div id="tab-1" className={currentTab === 1 ? 'block' : 'hidden'}>
       <div className="flex items-center justify-center my-14">
         <div className="flex items-center justify-center border rounded-full rounded-wrapper w-14 h-14">
           <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
@@ -23,9 +24,9 @@ const BookingInformation = () => {
         <p className="font-light text-gray-400">Please fill up the blank fields below</p>
       </div>
       <div className="flex flex-col justify-center md:flex-row mb-14">
-        <div className="w-full px-5 py-8 border-r-2 md:w-3/6 lg:px-20 md:px-10">
+        <div className="w-full px-5 py-8 md:border-r-2 md:w-3/6 lg:px-20 md:px-10">
           <Image priority src={'/images/booking/1.jpg'} alt="booking cover" width={420} height={270} />
-          <div className="flex justify-between mt-4">
+          <div className="flex flex-col justify-between mt-4 md:flex-row">
             <div>
               <h2 className="text-xl">Podo Wae</h2>
               <p className="text-base text-gray-400">Madiun, Indonesia</p>
@@ -84,12 +85,14 @@ const BookingInformation = () => {
         </div>
       </div>
       <div className="flex justify-center mb-5">
-        <button className="py-2 w-72 btn-primary">Continue to Book</button>
+        <button className="py-2 w-72 btn-primary" onClick={() => onTabChange(2)}>
+          Continue to Book
+        </button>
       </div>
       <div className="flex justify-center mb-16">
         <button className="py-2 w-72 btn-secondary">Cancel</button>
       </div>
-    </>
+    </div>
   );
 };
 
