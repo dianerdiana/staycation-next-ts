@@ -6,5 +6,4 @@ export type VacationPlace = {
   price: number;
   region: string;
   title: string;
-  category: string;
 };
